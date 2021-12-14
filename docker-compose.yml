@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ./dockerfiles/app
+
+    image: qualime/app
+
+    container_name: qualime-app
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./app:/usr/share/nginx/html
+
+    working_dir: /usr/share/nginx/html
+
+    ports:
+      - ${APP_PORT}:80
+
+    networks:
+      - qualime
+
+networks:
+  qualime:
+    driver: bridge
