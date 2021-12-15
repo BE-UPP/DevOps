@@ -62,7 +62,7 @@ services:
       REACT_APP_API_DOMAIN: ${REACT_APP_API_DOMAIN}
       MONGO_PORT: ${MONGO_PORT}
 
-    command: ./entrypoints/entrypoint.sh
+    command: ./entrypoints/entrypoint-api.sh
 
     networks:
       - qualime
