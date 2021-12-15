@@ -50,7 +50,7 @@ services:
 
     volumes:
       - ./api:/api
-      - /api/node_modules
+      - ./entrypoints/entrypoint-api.sh:/api/entrypoint-api.sh
 
     working_dir: /api
 
@@ -62,7 +62,7 @@ services:
       REACT_APP_API_DOMAIN: ${REACT_APP_API_DOMAIN}
       MONGO_PORT: ${MONGO_PORT}
 
-    command: ./entrypoints/entrypoint-api.sh
+    command: ./entrypoint-api.sh
 
     networks:
       - qualime

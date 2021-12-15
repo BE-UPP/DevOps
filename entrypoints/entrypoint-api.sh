@@ -1,5 +1,5 @@
 #!/bin/bash
 
-npm run start:dev
+node src/server.js
 
 # tail -f /dev/null
